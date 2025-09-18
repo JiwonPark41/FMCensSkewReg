@@ -1,0 +1,51 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# FMCensSkewReg
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+FMCensSkewReg implements finite mixture censored regression models under four distributional families: Normal (FM-NCR), Student-t (FM-TCR), Skew-Normal (FM-SNCR), Skew-t (FM-STCR)
+
+## Installation
+
+You can install the development version of FMCensSkewReg from GitHub:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("jpark335/FMCensSkewReg")
+```
+
+## Example
+
+Here is a minimal working example with simulated censored data:
+```{r example}
+library(FMCensSkewReg)
+
+set.seed(1)
+n <- 50
+x <- cbind(1, runif(n), rnorm(n))
+
+# Simulated response with 20% censoring
+y <- rnorm(n)
+cc <- rbinom(n, 1, 0.2)   # censoring indicator
+
+# Fit two mixture models
+fitN  <- EM.skewCens.mixR(cc, y, x, g = 2, family = "Normal", iter.max = 100)
+fitST <- EM.skewCens.mixR(cc, y, x, g = 2, family = "ST",    nu = 4, iter.max = 150)
+
+c(N = fitN$loglik, ST = fitST$loglik)
+```

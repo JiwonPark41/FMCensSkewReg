@@ -1,11 +1,32 @@
 Package: FMCensSkewReg
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Title: Finite Mixture of Censored Regression Models with Skewed
+    Distributions
+Version: 0.1.0
+Authors@R: c(
+    person("Jiwon", "Park", email = "pcjylove87@gmail.com", role = c("aut", "cre")),
+    person("Victor Hugo", email ="hlachos@uconn.edu", "Lachos Davila", role = "aut"))
+Description: Provides an implementation of finite mixture regression
+    models for censored data under four distributional families: Normal
+    (FM-NCR), Student-t (FM-TCR), Skew-Normal (FM-SNCR), and Skew-t
+    (FM-STCR).  The package enables flexible modeling of skewness and
+    heavy tails often observed in real-world data, while explicitly
+    accounting for censoring.  Functions are included for parameter
+    estimation via the EM algorithm, computation of standard errors, and
+    model comparison criteria such as AIC, BIC, and EDC.
+License: MIT + file LICENSE
+Imports:
+    stats,
+    mvtnorm,
+    MomTrunc,
+    mnormt,
+    sn,
+    truncdist,
+    mixsmsn
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3

@@ -1,0 +1,18 @@
+citHeader("To cite FMCensSkewReg in publications, please use:")
+
+bibentry(
+  bibtype  = "Article",
+  title    = "Finite mixture of regression models for censored data based on the skew-t distribution",
+  author   = c(
+    person("Jiwon", "Park"),
+    person("Dipak K.", "Dey"),
+    person("Víctor H.", "Lachos")
+  ),
+  journal  = "Computational Statistics",
+  year     = "2024",
+  volume   = "39",
+  number   = "7",
+  pages    = "3695--3726",
+  # doi     = "PUT-DOI-HERE",
+  textVersion = "Park, J., Dey, D.K., and Lachos, V.H. (2024). Finite mixture of regression models for censored data based on the skew-t distribution. Computational Statistics, 39(7), 3695–3726."
+)
