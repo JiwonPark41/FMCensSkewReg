@@ -45,7 +45,8 @@ cc <- rbinom(n, 1, 0.2)   # censoring indicator
 
 # Fit two mixture models
 fitN  <- EM.skewCens.mixR(cc, y, x, g = 2, family = "Normal", iter.max = 100)
-fitST <- EM.skewCens.mixR(cc, y, x, g = 2, family = "ST",    nu = 4, iter.max = 150)
+fitN$loglik
+# fitST <- EM.skewCens.mixR(cc, y, x, g = 2, family = "ST",    nu = 4, iter.max = 150)
 
-c(N = fitN$loglik, ST = fitST$loglik)
+#c(N = fitN$loglik, ST = fitST$loglik)
 ```

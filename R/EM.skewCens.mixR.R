@@ -19,7 +19,7 @@
 #' @param error Convergence tolerance for EM.
 #' @param iter.max Maximum number of EM iterations.
 #' @param obs.prob Logical; if \code{TRUE}, returns posterior membership matrix.
-#' @param kmeans.param Optional list for kmeans init (e.g. \code{list(iter.max=50, n.start=1, algorithm="Hartigan-Wong")}).
+#' @param kmeans.param Optional list for kmeans init.
 #' @param aitken Logical; use Aitken acceleration for convergence monitoring.
 #' @param IM Logical; if \code{TRUE}, compute (robust) standard errors via information matrix.
 #'

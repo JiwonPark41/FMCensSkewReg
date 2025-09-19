@@ -23,7 +23,8 @@ and optional information-matrix standard errors.
 
 Authors:
 \itemize{
-  \item Victor Hugo Lachos Davila
+  \item Victor Hugo Lachos Davila \email{hlachos@uconn.edu}
+  \item Dipak Dey \email{dipak.dey@uconn.edu}
 }
 
 }

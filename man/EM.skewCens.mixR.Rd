@@ -59,7 +59,7 @@ EM.skewCens.mixR(
 
 \item{obs.prob}{Logical; if \code{TRUE}, returns posterior membership matrix.}
 
-\item{kmeans.param}{Optional list for kmeans init (e.g. \code{list(iter.max=50, n.start=1, algorithm="Hartigan-Wong")}).}
+\item{kmeans.param}{Optional list for kmeans init.}
 
 \item{aitken}{Logical; use Aitken acceleration for convergence monitoring.}
 
