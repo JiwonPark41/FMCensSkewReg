@@ -89,14 +89,24 @@ Left-censoring is indicated by \code{cc[i] = 1} and replacing \code{y[i]} by the
 The routine supports Normal, t, Skew-Normal, and Skew-t families with finite mixtures.
 }
 \examples{
-\dontrun{
+\dontshow{if (requireNamespace("mixsmsn", quietly = TRUE)) withAutoprint(\{ # examplesIf}
 set.seed(1)
-n <- 50
-x <- cbind(1, rnorm(n))
-y <- rnorm(n)
-cc <- rbinom(n, 1, 0.2)
-fit <- EM.skewCens.mixR(cc, y, x, g = 2, family = "Normal", iter.max = 30)
-fit$loglik
+n <- 150
+X <- cbind(1, runif(n), rnorm(n))
+pi <- c(0.6, 0.4); nu <- 4
+b1 <- c(0.5, 1.0, -1.0); sigma1 <- 1; shape1 <- 2
+b2 <- c(1.0,-0.5, 0.5);  sigma2 <- 2; shape2 <- 3
+mu1 <- drop(X \%*\% b1); mu2 <- drop(X \%*\% b2)
+draw1 <- function(i){
+  a1 <- list(mu=mu1[i], sigma2=sigma1, shape=shape1, nu=nu)
+  a2 <- list(mu=mu2[i], sigma2=sigma2, shape=shape2, nu=nu)
+  mixsmsn::rmix(1, pi, "Skew.t", list(a1,a2), cluster=FALSE)
 }
-
+y0 <- vapply(seq_len(n), draw1, numeric(1))
+cutoff <- unname(stats::quantile(y0, 0.20))
+cc <- as.integer(y0 <= cutoff)
+y  <- ifelse(cc == 1, cutoff, y0)
+fit <- EM.skewCens.mixR(cc, y, X, g=2, family="Normal", iter.max=50)
+fit$loglik
+\dontshow{\}) # examplesIf}
 }
