@@ -18,6 +18,14 @@ and optional information-matrix standard errors.
 }
 }
 
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/JiwonPark41/FMCensSkewReg}
+  \item Report bugs at \url{https://github.com/JiwonPark41/FMCensSkewReg/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Jiwon Park \email{pcjylove87@gmail.com}
 

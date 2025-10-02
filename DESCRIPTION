@@ -1,6 +1,6 @@
 Package: FMCensSkewReg
 Title: Finite Mixture of Censored Regression Models with Skewed Distributions
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person("Jiwon", "Park", email = "pcjylove87@gmail.com", role = c("aut", "cre")),
     person("Victor Hugo", "Lachos Davila", email = "hlachos@uconn.edu", role = "aut"),
@@ -16,6 +16,9 @@ Description: Provides an implementation of finite mixture regression models for 
     estimation via the EM algorithm, computation of standard errors, and model
     comparison criteria such as AIC, BIC, and EDC.
 License: MIT + file LICENSE
+URL: https://github.com/JiwonPark41/FMCensSkewReg
+BugReports: https://github.com/JiwonPark41/FMCensSkewReg/issues
+Depends: R (>= 3.6.0)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
